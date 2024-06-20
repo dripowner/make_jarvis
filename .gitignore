@@ -162,3 +162,4 @@ cython_debug/
 *.mp3
 *.wav
 .vscode
+records

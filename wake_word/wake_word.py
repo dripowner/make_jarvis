@@ -30,7 +30,7 @@ for x in os.getenv("KEYWORD_FILE_PATH"):
         keywords.append(keyword_phrase_part[0])
 
 output_path = "out.wav"
-model = whisper.load_model("base")
+model = whisper.load_model("small")
 
 if __name__ == "__main__":
 	recorder.start()
