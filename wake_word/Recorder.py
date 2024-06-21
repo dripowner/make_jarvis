@@ -14,6 +14,7 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from stt.STT import STT
 from llm.LLM import LLM
+from llm.LLM2 import LLMphi3
 from tts.TTS import TTS
 
 class Recorder():
@@ -53,6 +54,7 @@ class Recorder():
         self.stt = STT()
         self.chunk_size = chunk_size
         self.llm = LLM()
+        self.phi3 = LLMphi3()
         self.tts = TTS(os.getenv("ELEVEN_LABS"))
 
     def wav2mp3(self, wav_file_path, mp3_file_path):
@@ -68,7 +70,7 @@ class Recorder():
         return None
     
     def text_response(self, request):
-        return self.llm.answer(request)
+        return self.phi3.answer(request)
     
     def record_one(self):
         try:
